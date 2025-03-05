@@ -1,0 +1,149 @@
+.modal_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+
+  .backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+
+.modal_wrapper {
+  width: 700px;
+  height: auto;
+  min-height: 200px;
+  max-height: calc(100vh - 60px);
+  box-shadow: 0 4px 20px rgb(0 0 0 / 15%);
+  background: #FFFFFF;
+  border-radius: 10px;
+  transform: scale(0.3);
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+  z-index: 1;
+  padding: 50px 70px;
+  will-change: tranform;
+
+  &.show_modal {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+
+    &:hover {
+      opacity: .6;
+    }
+  }
+}
+
+.attention_modal {
+  .attention_modal_content {
+    h2 {
+      font-weight: 600;
+      font-size: 24px;
+      color: #5F6C8E;
+      text-align: center;
+      margin: 10px 0 20px;
+      white-space: break-spaces;
+    }
+
+    .text {
+      font-size: 16px;
+      color: #1D2740;
+      text-align: center;
+      margin-bottom: 36px;
+      white-space: break-spaces;
+    }
+
+    .btns_wrapper {
+      display: flex;
+      justify-content: flex-end;
+
+      > div {
+        margin-left: 15px;
+        width: 110px;
+      }
+    }
+  }
+}
+
+.add_or_update_wrapper {
+  .input {
+    margin: 30px 0;
+  }
+
+  .buttons_wrapper {
+    display: flex;
+    justify-content: flex-end;
+
+    .button {
+      margin-right: 20px;
+    }
+  }
+}
+
+
+.deleteModal {
+  min-height: auto;
+  width: unset;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 20vh;
+
+    h2 {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 28.13px;
+      letter-spacing: 0;
+      color: #000000;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 18.75px;
+      letter-spacing: 0;
+      color: #7D7D7D;
+    }
+
+    .btns_wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      .btn {
+        margin-right: 15px;
+        width: 100%;
+
+        >button {
+          width: 100%;
+          border-radius: 15px;
+        }
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+

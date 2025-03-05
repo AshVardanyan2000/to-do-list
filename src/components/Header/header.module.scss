@@ -1,0 +1,143 @@
+.header_wrapper {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 20px;
+
+  .header_title {
+    display: flex;
+    align-items: center;
+    width: 200px;
+
+    svg {
+      width: 50px;
+      height: 50px;
+
+      path {
+        fill: var(--yellow);
+      }
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 37.5px;
+      letter-spacing: 0;
+      color: var(--dark-blue);
+      margin-left: 12px;
+    }
+  }
+
+  .header_main {
+    display: flex;
+    align-items: center;
+
+    .header_checkbox_input_wrapper {
+      display: flex;
+      align-items: center;
+
+      .header_checkbox {
+        width: 115px;
+      }
+
+      .header_input {
+        margin: 0 20px;
+        width: 400px;
+      }
+    }
+
+    .header_button_wrapper {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      .button {
+        margin-right: 20px;
+
+        .button_title {
+          display: flex;
+          align-items: center;
+
+          span {
+            margin-left: 8px;
+          }
+        }
+      }
+
+      .action_modal_wrapper {
+        position: absolute;
+        background: #FFFFFF;
+        border-radius: 8px;
+        box-shadow: 0 0 24px 0 #00000033;
+        z-index: 9;
+        right: 0;
+        top: 50px;
+
+        .action_modal_item {
+          padding: 10px 12px;
+          cursor: pointer;
+          transition: all 0.4s;
+          display: flex;
+          align-items: center;
+
+          &:first-child {
+            border-radius: 8px 8px 0 0;
+
+            svg{
+              width: 24px;
+              height: 24px;
+              path{
+                fill: var(--yellow);
+              }
+            }
+          }
+
+          &:last-child {
+            border-radius: 0 0 8px 8px;
+          }
+
+          p {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19.36px;
+            letter-spacing: 0;
+            margin-left: 10px;
+          }
+
+          &:hover {
+            background: var(--button_hover_color);
+          }
+        }
+      }
+
+    }
+
+  }
+
+
+
+  @media only screen and (max-width: 1285px) {
+    align-items: flex-start;
+
+    .header_main {
+      flex-direction: column;
+      align-items: flex-end;
+
+      .header_button_wrapper {
+        margin-top: 20px;
+        margin-right: 20px;
+      }
+    }
+
+  }
+
+  @media only screen and (max-width: 980px) {
+    align-items: flex-start;
+    flex-direction: column;
+
+  }
+
+
+}

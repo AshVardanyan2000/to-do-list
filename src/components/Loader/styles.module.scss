@@ -1,0 +1,35 @@
+.loader_wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    background: transparent !important;
+    border-radius: 100%;
+    border: 3px solid #355ECA;
+    border-bottom-color: transparent !important;
+    display: inline-block;
+    animation: loading 0.75s 0s infinite linear;
+    animation-fill-mode: both;
+    box-sizing: border-box;
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

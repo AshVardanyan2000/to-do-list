@@ -1,0 +1,98 @@
+.checkbox_wrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  .checkbox_input {
+    display: none;
+
+    &:checked {
+      & + .checkbox_label {
+        .checkbox_box {
+          background: var(--dark-blue);
+
+          &:after {
+            opacity: 1;
+            visibility: visible;
+            transition: all 0.4s;
+          }
+        }
+      }
+    }
+
+    &:disabled {
+      & + .checkbox_label {
+
+        .checkbox_box {
+          background:#C2C2C2;
+          border: 2px solid #C2C2C2;
+          cursor: default;
+
+
+          &:after {
+            content: "";
+            width: 5px;
+            height: 11px;
+            border-bottom: 0;
+            border-right: 3px solid var(--transparent-color);
+            transform: rotate(90deg) skew(0);
+            opacity: 1;
+            visibility: visible;
+            position: absolute;
+            top: 0;
+            transition: none;
+          }
+        }
+
+        .checkbox_text {
+          cursor: default;
+        }
+      }
+    }
+  }
+
+  .checkbox_label {
+    display: flex;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18.75px;
+    letter-spacing: 0;
+    color: var(--dark-blue);
+
+    .checkbox_text {
+      cursor: pointer;
+    }
+  }
+
+  .checkbox_box {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    border: 1px solid var(--dark-blue);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+
+    &:after {
+      content: "";
+      width: 4px;
+      height: 11px;
+      border-bottom: 2px solid var(--transparent-color);
+      border-right: 2px solid var(--transparent-color);
+      transform: rotate(45deg) skew(2deg);
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      top: 0;
+    }
+  }
+}

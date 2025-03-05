@@ -1,0 +1,210 @@
+.text_field_wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  &.error {
+    label {
+      color: red !important;
+    }
+
+    textarea,
+    input {
+      border-color: red !important;
+    }
+  }
+
+  label {
+    position: absolute;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: auto;
+    max-width: calc(100% - 13px);
+    color: #5F6C8E;
+    padding: 0 7px;
+    border-radius: 3px;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    transform-origin: top left;
+    transform: translate(9px, var(--default-position)) scale(1);
+    -webkit-transition: color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms, -webkit-transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms, background cubic-bezier(0.0, 0, 0.2, 1) 150ms;
+    transition: color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms, transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms, background cubic-bezier(0.0, 0, 0.2, 1) 150ms;
+  }
+
+  textarea,
+  input {
+    position: relative;
+    border: 1px solid rgba(29, 39, 64, 0.2);
+    box-sizing: border-box;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding: 16.5px 14px;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--dark-blue);
+    z-index: 1;
+    background: transparent;
+    transition: border-color 100ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+
+    &:focus {
+      border-color: var(--dark-blue);
+
+      ~ label {
+        color: var(--dark-blue);
+      }
+    }
+
+    &.with_value,
+    &:focus {
+      z-index: 0;
+
+      ~ label {
+        z-index: 1;
+        transform: translate(10px, -9px) scale(0.75);
+
+        &:after {
+          content: "";
+          position: absolute;
+          background: var(--label-bg);
+          width: 100%;
+          left: 0;
+          top: 10px;
+          height: 4px;
+          z-index: -1;
+        }
+      }
+    }
+
+    &.with_clear_btn {
+      padding-right: 20px;
+    }
+
+    &.with_search_icon {
+      padding-right: 38px;
+    }
+  }
+
+  &.error.textarea_field{
+    .border{
+      border-color: red !important;
+    }
+  }
+  &.textarea_field {
+    height: auto !important;
+    padding: 6px 1px 4px 0;
+    position: relative;
+
+
+    .border {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(29, 39, 64, 0.2);
+      z-index: -1;
+    }
+
+    textarea {
+      padding: 0 12px 0 14px;
+      border-radius: 0;
+      border: none;
+      height: 180px;
+      resize: none;
+      font-size: 14px;
+      line-height: 20px;
+
+      &:focus {
+        ~ .border {
+          border-color: var(--dark-blue);
+        }
+      }
+
+      &.with_value,
+      &:focus {
+
+        ~ label {
+          transform: translate(10px, -10px) scale(0.75);
+
+          &:after {
+            left: 0;
+            top: 11px;
+          }
+        }
+      }
+
+      &::-webkit-scrollbar {
+        width: 3px;
+      }
+
+      /* Track */
+      &::-webkit-scrollbar-track {
+        border-radius: 3px;
+        background: #C8C7CC;
+        border: 1px solid white;
+        margin: 5px 0;
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        cursor: pointer;
+        background: var(--dark-blue);
+        border-radius: 3px;
+      }
+
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: #1d6843;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .clear_svg {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    z-index: 1;
+    margin-top: 1px;
+
+    &:hover {
+      path {
+        stroke: rgba(163, 163, 186, 0.8);
+      }
+    }
+  }
+
+  .search_svg {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    width: 16px;
+    height: 16px;
+    transform: translateY(-50%);
+    color: #5E6368;
+  }
+
+  .error_text {
+    position: absolute;
+    bottom: -18px;
+    left: 2px;
+    color: red;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

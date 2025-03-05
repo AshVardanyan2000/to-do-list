@@ -1,0 +1,92 @@
+.btn_wrapper {
+  width: auto;
+  min-width: 60px;
+
+  .btn {
+    padding: 12px 30px;
+    text-align: center;
+    transition: 0.5s;
+    color: var(--button-test-color);
+    border-radius: 6px;
+    display: block;
+    outline: 0;
+    border: 1px solid var(--button-color);
+    font-weight: 700;
+    background: var(--button-color);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    position: relative;
+    min-width: 115px;
+    height: 40px;
+
+    svg {
+      path {
+        transition: 0.5s;
+
+      }
+    }
+
+    &:not(.reverse_color):hover {
+      color: var(--button-color);
+      background: transparent;
+
+      svg {
+        path {
+          fill: var(--button-color);
+        }
+      }
+    }
+
+    //&:active {
+    //  transform: scale(0.95);
+    //}
+
+    &.reverse_color {
+      color: var(--button-color);
+      background: transparent;
+
+      svg {
+        path {
+          fill: var(--button-color);
+        }
+      }
+
+      &:hover {
+        color: #FFFFFF;
+        background: var(--button-color);
+
+        svg {
+          path {
+            fill: #FFFFFF;
+          }
+        }
+      }
+    }
+
+    &.cancel_button {
+      color: var(--button-color);
+      background: #FFFFFF;
+      border-color: #E6E6E6;
+      transition: all 0.4s;
+
+      &:hover {
+        background: #E6E6E6;
+      }
+    }
+
+    &.delete_button {
+      color: #FFFFFF;
+      background: #F24646;
+      border-color: #F24646;
+      transition: all 0.4s;
+
+      &:hover {
+        background: #FFFFFF;
+        color: #F24646;
+      }
+    }
+  }
+}
+
